@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- 字元編碼與相容性 -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO 最佳化 -->
+  <title>EasyTTS - Intelligent Text-to-Speech Solution</title>
+  <meta name="description"
+    content="EasyTTS: Convert your novels and large texts into natural, fluent speech with multi-role voice options and customizable settings." />
+  <meta name="keywords" content="text-to-speech, novel conversion, multi-role voice, TTS, EasyTTS" />
+  <meta name="author" content="EasyTTS Team" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph 協議（社交媒體分享最佳化） -->
+  <meta property="og:title" content="EasyTTS - Intelligent Text-to-Speech Solution" />
+  <meta property="og:description"
+    content="Transform your text into professional-grade speech effortlessly with EasyTTS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://EasyTTS.ioplus.tech" />
+  <meta property="og:image" content="/assets/og-image.jpg" />
+
+  <!-- Favicon 與 PWA 支持 -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <!-- 16x16 和 32x32 的小圖示（一些瀏覽器使用） -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+
+  <!-- Apple設備（iOS）的圖示 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+
+  <!-- Android Chrome（高解析度圖示） -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+
+  <!-- Web Manifest（用於PWA，漸進式Web應用） -->
+  <link rel="manifest" href="/favicon/site.webmanifest">
+
+  <!-- 預載入關鍵資源 -->
+  <link rel="preload" href="/src/main.ts" as="script" />
+
+  <!-- 性能最佳化：DNS 預解析（假設可能用到外部服務） -->
+  <link rel="dns-prefetch" href="https://github.com" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PK1HG4HG14"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PK1HG4HG14');
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+
+  <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+</body>
+
+</html>

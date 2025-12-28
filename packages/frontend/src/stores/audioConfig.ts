@@ -1,0 +1,57 @@
+import { defineStore } from "pinia";
+import { reactive } from "vue";
+
+export interface AudioConfig {
+  volume: number;
+  rate: number;
+  pitch: number;
+  voiceMode: string;
+  inputText: string;
+  selectedLanguage: string;
+  selectedGender: string;
+  selectedVoice: string;
+  previewText: string;
+  openaiBaseUrl: string;
+  openaiKey: string;
+  openaiModel: string;
+  previewAudioUrl: string;
+  superLong?: boolean;
+}
+
+// 默認配置常量
+const defaultConfig: AudioConfig = {
+  rate: 0,
+  volume: 0,
+  pitch: 0,
+  voiceMode: 'preset',
+  inputText: '',
+  selectedLanguage: 'zh-CN',
+  selectedGender: 'All',
+  selectedVoice: 'zh-CN-YunxiNeural',
+  previewText: '這是一段測試文本，用於試聽語音效果。',
+  openaiBaseUrl: '',
+  openaiKey: '',
+  openaiModel: '',
+  previewAudioUrl: '',
+  superLong: false,
+};
+
+export const useAudioConfigStore = defineStore('audioConfig', () => {
+  const audioConfig = reactive<AudioConfig>({ ...defaultConfig });
+
+  function updateConfig<K extends keyof AudioConfig>(prop: K, value: AudioConfig[K]) {
+    if (Object.prototype.hasOwnProperty.call(audioConfig, prop)) {
+      audioConfig[prop] = value;
+    } else {
+      console.warn(`Property "${prop}" does not exist in audioConfig`);
+    }
+  }
+
+  function reset() {
+    Object.assign(audioConfig, { ...defaultConfig });
+  }
+
+  return { audioConfig, updateConfig, reset };
+}, {
+  persist: true
+});

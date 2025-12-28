@@ -1,0 +1,25 @@
+{
+  "name": "easy-tts",
+  "version": "0.0.15",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env MODE=development pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "start": "cross-env MODE=production pnpm --filter @easy-tts/backend start",
+    "clean:node_modules": "node -e \"const fs=require('fs');const path=require('path');const sleep=ms=>new Promise(r=>setTimeout(r,ms));const rmWithRetry=async(p,retries=3)=>{for(let i=0;i<retries;i++){try{fs.rmSync(p,{recursive:true,force:true});break;}catch(e){if(i===retries-1)throw e;console.log('Retrying...');await sleep(1000);}}};const cwd=process.cwd();const rm=async p=>{if(fs.existsSync(p))await rmWithRetry(p);};const rmMain=async()=>{await rm(path.join(cwd,'node_modules'));const pkgs=path.join(cwd,'packages');if(fs.existsSync(pkgs)){fs.readdirSync(pkgs).forEach(async d=>{await rm(path.join(pkgs,d,'node_modules'));});}};rmMain();\"",
+    "clean:store": "pnpm store prune",
+    "clean:lockfile": "node -e \"const fs=require('fs'); if(fs.existsSync('pnpm-lock.yaml')) fs.unlinkSync('pnpm-lock.yaml');\"",
+    "clean:stop": "node -e \"const{execSync,spawnSync}=require('child_process');const pid=process.pid;try{if(process.platform==='win32'){spawnSync('powershell',['-Command',`Get-Process node -ErrorAction SilentlyContinue | Where-Object {$$_.Id -ne ${pid}} | Stop-Process -Force -ErrorAction SilentlyContinue`],{stdio:'ignore'});}else{execSync(`pkill -f node --ignore ${pid}`,{stdio:'ignore'});}}catch(e){}\"",
+    "clean:all": "pnpm run clean:stop && pnpm run clean:node_modules && pnpm run clean:store && pnpm run clean:lockfile"
+  },
+  "packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6",
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "npm-run-path": "5.3.0"
+    }
+  }
+}
