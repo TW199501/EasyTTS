@@ -1,8 +1,8 @@
 <template>
   <div class="novel-to-audio-container">
     <div class="header">
-      <h1>文本轉語音</h1>
-      <p class="subtitle">將您的文本一鍵轉換為自然流暢的語音</p>
+      <h1>文字轉語音</h1>
+      <p class="subtitle">將您的文件一鍵轉換為自然流暢的語音</p>
     </div>
 
     <el-row :gutter="20">
@@ -10,14 +10,14 @@
         <el-card class="input-card">
           <template #header>
             <div class="card-header">
-              <span>文本輸入</span>
+              <span>文字輸入</span>
               <el-button type="primary" size="small" @click="clearText">清空</el-button>
             </div>
           </template>
           <el-input
             v-model="audioConfig.inputText"
             type="textarea"
-            placeholder="請輸入或黏貼文本"
+            placeholder="請輸入或Copy文字"
             :rows="12"
             resize="none"
           />
@@ -33,7 +33,7 @@
               <el-icon class="el-icon--upload"><upload-filled /></el-icon>
               <div class="el-upload__text">拖拽文件到此處或 <em>點擊上傳</em></div>
               <template #tip>
-                <div class="el-upload__tip">支持 .txt 文本文件</div>
+                <div class="el-upload__tip">支持 .txt</div>
               </template>
             </el-upload>
           </div>
@@ -172,10 +172,10 @@
           </div>
 
           <div class="preview-section">
-            <el-form-item label="試聽文本">
+            <el-form-item label="試聽文字">
               <el-input
                 v-model="audioConfig.previewText"
-                placeholder="輸入短文本進行試聽"
+                placeholder="輸入短文字進行試聽"
                 :disabled="!canPreview"
               />
             </el-form-item>

@@ -173,8 +173,9 @@ export function createAudioStreamProcessor(
           break
         }
         if (value) {
-          await appendBuffer(value.buffer)
-          const blob = new Blob([value.buffer], { type: mimeType })
+          const buffer = value.buffer as ArrayBuffer
+          await appendBuffer(buffer)
+          const blob = new Blob([buffer], { type: mimeType })
           const blobDuration = (blob.size * 8) / bitrate
           blobs.push({ blob, duration: blobDuration })
           onProgress()

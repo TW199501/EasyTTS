@@ -20,9 +20,6 @@
 
 **你可以輕鬆的將 easytts 部署到你的雲端伺服器或者本地！**
 
-## 體驗一下
-
-[easytts.ioplus.tech](https://easytts.ioplus.tech)
 
 ## 核心功能
 
@@ -45,8 +42,8 @@
 
 ## Screenshots
 
-![Home](./images/readme.home.jpg)
-![Generate](./images/readme.generate.jpg)
+![Home](./images/home.png)
+![Generate](./images/generate.png)
 
 ## 快速開始
 
