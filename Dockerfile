@@ -2,12 +2,13 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY package.json pnpm-workspace.yaml ./
+COPY pnpm-lock.yaml* ./
 COPY packages packages
 
 RUN corepack enable && \
-    pnpm install && \
-    pnpm build
+  pnpm install --frozen-lockfile || pnpm install && \
+  pnpm build
 
 FROM node:20-alpine
 

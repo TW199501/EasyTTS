@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs (will be built in container)
+packages/*/dist
+packages/backend/public
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Test & docs
+test.html
+docs
+images
+*.md
+!packages/**/*.md
+
+# Audio files (mounted as volume)
+audio
+packages/backend/audio
+
+# Misc
+.editorconfig
+.prettierrc*
+.prettierignore
+.codebuddy
+tts-api
+genVoiceList.js
+scripts

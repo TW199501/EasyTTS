@@ -1,6 +1,6 @@
 {
   "name": "@easy-tts/backend",
-  "version": "0.0.15",
+  "version": "1.0.0",
   "scripts": {
     "start": "cross-env MODE=production node dist/src/server.js",
     "build": "tsc && copyfiles -u 1 \"src/**/*.{json,txt,yml}\" dist/",

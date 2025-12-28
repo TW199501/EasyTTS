@@ -1,6 +1,6 @@
 {
   "name": "easy-tts",
-  "version": "0.0.15",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "cross-env MODE=development pnpm -r --parallel dev",
