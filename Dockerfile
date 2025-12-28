@@ -25,6 +25,8 @@ COPY --from=builder /app/pnpm-lock.yaml /app/pnpm-lock.yaml
 
 RUN pnpm install --prod
 
+ENV MODE=production
+
 EXPOSE 3000
 
-CMD ["pnpm", "start"]
+CMD ["node", "dist/src/server.js"]
