@@ -1,3 +1,6 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.inlineSuggest.syntaxHighlightingEnabled": false,
+  "editor.suggest.showInlineDetails": false,
+  "editor.screenReaderAnnounceInlineSuggestion": false
 }
